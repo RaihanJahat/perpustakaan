@@ -70,12 +70,7 @@ Perpustakaan Digital  </title>
                     Sign In User
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link me-2" href="{{url('signin')}}">
-                    <i class="fas fa-key opacity-6 text-dark me-1"></i>
-                    Sign In Admin
-                  </a>
-                </li>
+                
               </ul>
              
             </div>

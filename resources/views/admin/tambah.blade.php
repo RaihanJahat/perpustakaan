@@ -127,7 +127,7 @@
 
   
 <li class="nav-item">
-  <a class="nav-link text-white " href="./tables.html">
+  <a class="nav-link text-white " href="{{url('tables')}}">
     
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
         <i class="bi bi-book-fill"></i>
@@ -240,6 +240,12 @@
 
 
     <div class="card mx-5">
+      <form action="" method="post">
+        @csrf
+
+
+
+        
         <div class="card body p-5 ">
             <form class="row g-3">
                 <div class="col-md-12">

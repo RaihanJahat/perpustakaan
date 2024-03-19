@@ -60,7 +60,7 @@
             <div class="collapse navbar-collapse" id="navigation">
               <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                  <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="{{url('dashboard')}}">
+                  <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="{{url('/')}}">
                     <i class="fa fa-chart-pie opacity-6 text-dark me-1"></i>
                     Dashboard
                   </a>
