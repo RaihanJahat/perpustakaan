@@ -11,14 +11,6 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
         Schema::create('peminjaman', function (Blueprint $table) {
             $table->integer('PeminjamanID');
             $table->integer('UserID');
@@ -29,5 +21,13 @@ return new class extends Migration
             $table->timestamps();
             $table->primary('PeminjamanID');
         });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        schema::dropIfExists('peminjaman');
     }
 };

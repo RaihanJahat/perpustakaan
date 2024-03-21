@@ -11,14 +11,6 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
         Schema::create('ulasan_buku', function (Blueprint $table) {
             $table->integer('UlasanID');
             $table->integer('UserID');
@@ -28,5 +20,13 @@ return new class extends Migration
             $table->timestamps();
             $table->primary('UlasanID');
         });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('ulasan_buku');
     }
 };

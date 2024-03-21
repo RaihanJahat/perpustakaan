@@ -11,7 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('bukus', function (Blueprint $table) {
+            $table->integer('BukuID')->autoIncrement();
+            $table->string('Judul', 255);
+            $table->string('Penulis', 255);
+            $table->string('Penerbit', 255);
+            $table->integer('TahunTerbit');
+            $table->integer('stock');
+            $table->timestamps();
+    
+        });
     }
 
     /**
@@ -19,14 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::create('table_buku', function (Blueprint $table) {
-            $table->integer('BukuID');
-            $table->string('Judul', 255);
-            $table->string('Penulis', 255);
-            $table->string('Penerbit', 255);
-            $table->integer('TahunTerbit');
-            $table->timestamps();
-            $table->primary('BukuID');
-        });
+        schema::dropIfExists('table_buku');
     }
 };

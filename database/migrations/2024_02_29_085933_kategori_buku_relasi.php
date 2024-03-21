@@ -11,14 +11,6 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
         Schema::create('kategori_buku_relasi', function (Blueprint $table) {
             $table->integer('KategoriBukuID');
             $table->integer('BukuID');
@@ -26,5 +18,13 @@ return new class extends Migration
             $table->timestamps();
             $table->primary('KategoriBukuID');
         });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        schema::dropIfExists('kategori_buku_relasi');
     }
 };

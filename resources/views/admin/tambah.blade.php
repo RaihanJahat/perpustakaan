@@ -137,7 +137,7 @@
   </a>
 </li> 
 <li class="nav-item">
-  <a class="nav-link text-white " href="./virtual-reality.html">
+  <a class="nav-link text-white " href="{{url('')}}">
     
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
         <i class="bi bi-people"></i>
@@ -147,7 +147,7 @@
   </a>
 </li>
 <li class="nav-item">
-  <a class="nav-link text-white " href="./notifications.html">
+  <a class="nav-link text-white " href="{{url('')}}">
     
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
         <i class="bi bi-grid-fill"></i>
@@ -157,7 +157,7 @@
   </a>
 </li>
 <li class="nav-item">
-  <a class="nav-link text-white " href="./notifications.html">
+  <a class="nav-link text-white " href="{{url('')}}">
     
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
         <i class="bi bi-grid-fill"></i>
@@ -240,36 +240,32 @@
 
 
     <div class="card mx-5">
-      <form action="" method="post">
+      <form action="{{url('tambahBuku')}}" method="post">
         @csrf
-
-
-
-        
-        <div class="card body p-5 ">
-            <form class="row g-3">
+        <div class="card body p-8 ">
+            <form class="row g-5">
                 <div class="col-md-12">
                   <label for="judul" class="form-label">Judul</label>
-                  <input type="text" class="form-control" id="judul">
+                  <input type="text" class="form-control" name="judul" id="judul">
                 </div>
                 <div class="col-12">
                   <label for="penulis" class="form-label">Penulis</label>
-                  <input type="text" class="form-control" id="penulis">
+                  <input type="text" class="form-control" name="penulis" id="penulis">
                 </div>
                 <div class="col-12">
                   <label for="penerbit" class="form-label">Penerbit</label>
-                  <input type="text" class="form-control" id="penerbit">
+                  <input type="text" class="form-control" name="penerbit" id="penerbit">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <label for="tahunterbit" class="form-label">Tahun Terbit</label>
-                  <input type="text" class="form-control" id="tahunterbit">
+                  <input type="text" class="form-control" name="tahunterbit" id="tahunterbit">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <label for="stock" class="form-label">Stock</label>
-                  <input type="text" class="form-control" id="stock">
+                  <input type="text" class="form-control" name="stock" id="stock">
                 </div>
                 <div class="col-12">
-                  <button type="submit" class="btn btn-primary">Tambah</button>
+                  <button type="submit" class="btn btn-primary" id="tambah">Tambah</button>
                 </div>
               </form>    
         </div>    

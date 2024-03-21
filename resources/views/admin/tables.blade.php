@@ -127,7 +127,7 @@
 
   
 <li class="nav-item">
-  <a class="nav-link text-white " href="./tables.html">
+  <a class="nav-link text-white " href="{{url('tables')}}">
     
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
         <i class="bi bi-book-fill"></i>
@@ -137,7 +137,7 @@
   </a>
 </li> 
 <li class="nav-item">
-  <a class="nav-link text-white " href="./virtual-reality.html">
+  <a class="nav-link text-white " href="{{url('')}}">
     
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
         <i class="bi bi-people"></i>
@@ -147,7 +147,7 @@
   </a>
 </li>
 <li class="nav-item">
-  <a class="nav-link text-white " href="./notifications.html">
+  <a class="nav-link text-white " href="{{url('')}}">
     
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
         <i class="bi bi-grid-fill"></i>
@@ -157,7 +157,7 @@
   </a>
 </li>
 <li class="nav-item">
-  <a class="nav-link text-white " href="./notifications.html">
+  <a class="nav-link text-white " href="{{url('')}}">
     
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
         <i class="bi bi-grid-fill"></i>
@@ -167,7 +167,7 @@
   </a>
 </li>
 <li class="nav-item">
-  <a class="nav-link text-white " href="./notifications.html">
+  <a class="nav-link text-white " href="{{url('')}}">
     
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
         <i class="bi bi-envelope"></i>
@@ -245,7 +245,7 @@
         <a href="{{url('tambah')}}"><button class="btn btn-primary" type="submit"><i class="bi bi-plus-circle">Tambah</i></button></a>
           <table class="table table-hover">
             <thead>
-                <th>Buku ID</th>
+                <th>No</th>
                 <th>Judul</th>
                 <th>Penulis</th>
                 <th>Penerbit</th>
@@ -255,13 +255,16 @@
                 
               </thead>
               <tbody>
+                @foreach ($data as $item)
+                    
                 <tr>
-                  <td>Anime</td>
-                  <td>Wibu</td>
-                  <td>Cina</td>
-                  <td>Raden</td>
-                  <td>10Masehi</td>
-                  <td>7000</td>
+                  <td>{{$item->BukuID}}</td>
+                  <td>{{$item->Judul}}</td>
+                  <td>{{$item->Penulis}}</td>
+                  <td>{{$item->Penerbit}}</td>
+                  <td>{{$item->TahunTerbit}}</td>
+                  <td>{{$item->stock}}</td>
+                  
                   <td>
                     
                     <ul class="list-inline-m-0">
@@ -269,11 +272,12 @@
                         <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></button>
                     </li>
                       <li class="list-inline-item">
-                        <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+                        <button href="hapusbuku/{{$item->BukuID}}" class="btn btn-danger btn-sm rounded-0"  data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
                     </li>
                     </ul>
                   </td>
                 </tr>
+                @endforeach
                 
               </tbody>
               

@@ -11,14 +11,6 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
         Schema::create('login_user', function (Blueprint $table) {
             $table->integer('UserID');
             $table->string('Username', 255);
@@ -30,5 +22,13 @@ return new class extends Migration
             $table->primary('UserID');
             
         });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        schema::dropIfExists('login_user');
     }
 };

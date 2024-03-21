@@ -11,7 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('kategoribuku', function (Blueprint $table) {
+            $table->integer('KategoriID');
+            $table->integer('NomorKategori');
+            $table->timestamps();
+            $table->primary('KategoriID');
+        });
     }
 
     /**
@@ -19,11 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::create('kategoribuku', function (Blueprint $table) {
-            $table->integer('KategoriID');
-            $table->integer('NomorKategori');
-            $table->timestamps();
-            $table->primary('KategoriID');
-        });
+        schema::dropIfExists('kategoribuku');
     }
 };

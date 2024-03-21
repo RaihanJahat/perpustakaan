@@ -22,8 +22,17 @@ Route::get('dashboard',[AdminContoller::class,'dashboard']);
 Route::get('signin',[AdminContoller::class,'signin']);
 Route::get('signup',[AdminContoller::class,'signup']);
 Route::get('tables',[AdminContoller::class,'tables']);
-Route::get('tambah',[AdminContoller::class,'tambah']);
+
+Route::get('tampil',[AdminContoller::class,'tampil']);
 
 //User
 Route::get('loguser',[UserController::class,'loguser']);
 Route::get('sign-up-user',[UserController::class,'signupuser']);
+
+//
+Route::get('tambah',[AdminContoller::class,'tambah']);
+Route::post('tambahBuku',[AdminContoller::class,'tambahBuku']);
+//hapus :v
+ Route::get('admin/hapus/{PetugasId}',[AdminContoller::class,'hapus']);
+
+Route::get('hapusbuku/{id}',[AdminContoller::class,'hapusbuku']);
